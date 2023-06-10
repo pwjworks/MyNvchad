@@ -178,6 +178,14 @@ M.cmp = {
 }
 
 M.telescope = {
+  extensions = {
+    project = {
+      base_dirs = {
+        "~/Projects",
+        "~/.config/nvim",
+      },
+    },
+  },
   extensions_list = { "themes", "terms", "project", "noice" },
 }
 return M
