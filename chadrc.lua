@@ -7,15 +7,12 @@ local highlights = require "custom.highlights"
 M.ui = {
   changed_themes = {
     catppuccin = {
-      polish_hl = {
-        ["@keyword"] = { fg = "#fca7ea" },
+      base_16 = {
+        base0E = "#fca7ea",
       },
-      -- base_16 = {
-      -- 	base0E = "#fca7ea",
-      -- },
-      -- base_30 = {
-      -- 	statusline_bg = "",
-      -- },
+      base_30 = {
+        statusline_bg = "",
+      },
     },
   },
   theme = "catppuccin",
