@@ -156,9 +156,15 @@ M.neogen = {
   },
 }
 
-M.hop = {
+M.flash = {
   n = {
-    ["W"] = { "<Cmd>HopChar1<CR>", "hopchar1", opts = { nowait = true, silent = true } },
+    ["s"] = { "<Cmd>lua require('flash').jump()<CR>", "Flash", opts = { nowait = true, silent = true } },
+    ["S"] = { "<Cmd>lua require('flash').treesitter()<CR>", "Flash", opts = { nowait = true, silent = true } },
   },
 }
+-- M.hop = {
+--   n = {
+--     ["W"] = { "<Cmd>HopChar1<CR>", "hopchar1", opts = { nowait = true, silent = true } },
+--   },
+-- }
 return M

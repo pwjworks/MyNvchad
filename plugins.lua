@@ -255,33 +255,33 @@ local plugins = {
   -- telescope project
   { "nvim-telescope/telescope-project.nvim" },
 
-  -- leap
-  {
-    "ggandor/leap.nvim",
-    keys = {
-      { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
-      { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
-      { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
-    },
-    config = function(_, opts)
-      local leap = require "leap"
-      for k, v in pairs(opts) do
-        leap.opts[k] = v
-      end
-      leap.add_default_mappings(true)
-      vim.keymap.del({ "x", "o" }, "x")
-      vim.keymap.del({ "x", "o" }, "X")
-    end,
-  },
+  -- -- leap
+  -- {
+  --   "ggandor/leap.nvim",
+  --   keys = {
+  --     { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
+  --     { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
+  --     { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
+  --   },
+  --   config = function(_, opts)
+  --     local leap = require "leap"
+  --     for k, v in pairs(opts) do
+  --       leap.opts[k] = v
+  --     end
+  --     leap.add_default_mappings(true)
+  --     vim.keymap.del({ "x", "o" }, "x")
+  --     vim.keymap.del({ "x", "o" }, "X")
+  --   end,
+  -- },
   -- hop
-  {
-    "phaazon/hop.nvim",
-    lazy = false,
-    branch = "v2",
-    config = function()
-      require("hop").setup {}
-    end,
-  },
+  -- {
+  --   "phaazon/hop.nvim",
+  --   lazy = false,
+  --   branch = "v2",
+  --   config = function()
+  --     require("hop").setup {}
+  --   end,
+  -- },
   -- dapui
   {
     "rcarriga/nvim-dap-ui",
@@ -460,5 +460,12 @@ local plugins = {
     },
   },
   { "simrat39/rust-tools.nvim" },
+  {
+    "folke/flash.nvim",
+    lazy = false,
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+  },
 }
 return plugins
