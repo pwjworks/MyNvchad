@@ -467,5 +467,12 @@ local plugins = {
     ---@type Flash.Config
     opts = {},
   },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      top_down = false,
+      render = "compact",
+    },
+  },
 }
 return plugins
