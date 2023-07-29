@@ -474,5 +474,8 @@ local plugins = {
       render = "compact",
     },
   },
+  {
+    "mfussenegger/nvim-dap-python",
+  },
 }
 return plugins

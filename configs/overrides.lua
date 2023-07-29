@@ -177,12 +177,24 @@ M.cmp = {
   },
 }
 
+local function project_dir_os()
+  if vim.loop.os_uname().sysname == "Linux" then
+    return {
+      "~/Projects",
+      "~/.config/nvim",
+    }
+  end
+  if vim.loop.os_uname().sysname == "Windows" then
+    return {
+      "C:\\Users\\clink\\AppData\\Local\\nvim",
+    }
+  end
+end
+
 M.telescope = {
   extensions = {
     project = {
-      base_dirs = {
-        "C:\\Users\\clink\\AppData\\Local\\nvim",
-      },
+      base_dirs = project_dir_os(),
     },
   },
   extensions_list = { "themes", "terms", "project", "noice" },
