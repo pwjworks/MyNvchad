@@ -116,8 +116,5 @@ dap.configurations.python = {
     request = "launch",
     name = "launch file",
     program = "${file}",
-    pythonPath = function()
-      return "C:\\Users\\clink\\AppData\\Local\\Programs\\Python\\Python311\\python.exe"
-    end,
   },
 }
