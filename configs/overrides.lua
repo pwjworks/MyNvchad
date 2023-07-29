@@ -184,7 +184,7 @@ local function project_dir_os()
       "~/.config/nvim",
     }
   end
-  if vim.loop.os_uname().sysname == "Windows" then
+  if vim.loop.os_uname().sysname == "Windows_NT" then
     return {
       "C:\\Users\\clink\\AppData\\Local\\nvim",
     }
