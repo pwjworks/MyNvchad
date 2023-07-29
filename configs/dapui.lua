@@ -9,7 +9,7 @@ local options = {
     repl = "r",
     toggle = "t",
   },
-  expand_lines = vim.fn.has("nvim-0.7") == 1,
+  expand_lines = vim.fn.has "nvim-0.7" == 1,
   layouts = {
     {
       elements = {
