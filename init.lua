@@ -104,9 +104,6 @@ autocmd({ "ModeChanged" }, {
     local current_mode = vim.fn.mode()
     if current_mode == "n" then
       vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#FFD400" })
-      vim.fn.sign_define("smoothcursor", { text = "▷" })
-    elseif current_mode == "v" then
-      vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#bf616a" })
       vim.fn.sign_define("smoothcursor", { text = "" })
     elseif current_mode == "V" then
       vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#bf616a" })
@@ -117,3 +114,16 @@ autocmd({ "ModeChanged" }, {
     end
   end,
 })
+
+if vim.g.neovide then
+  vim.opt.shell = "powershell"
+  vim.opt.shellcmdflag =
+    "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+  vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+  vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+  vim.opt.shellquote = ""
+  vim.opt.shellxquote = ""
+  vim.o.guifont = "JetBrainsMono Nerd Font:h16:b" -- text below applies for VimScript
+  vim.g.terminal_emulator = "powershell"
+  vim.g.neovide_transparency = 0.9
+end
