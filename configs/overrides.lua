@@ -186,7 +186,7 @@ local function project_dir_os()
   end
   if vim.loop.os_uname().sysname == "Windows_NT" then
     return {
-      "C:\\Users\\clink\\AppData\\Local\\nvim",
+      "C:\\Users\\13610\\AppData\\Local\\nvim",
     }
   end
 end
