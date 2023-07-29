@@ -91,15 +91,6 @@ dap.adapters.codelldb = {
     -- detached = false,
   },
 }
-
--- dap.adapters.python = {
---   type = "executable",
---   command = "python",
---   args = {
---     "-m",
---     "debugpy.adapter",
---   },
--- }
 dap.configurations.cpp = {
   {
     type = "codelldb",
@@ -109,13 +100,30 @@ dap.configurations.cpp = {
     terminal = "integrated",
   },
 }
---
--- dap.configurations.python = {
---   {
---     type = "python",
---     request = "launch",
---     name = "launch file",
---     program = "${file}",
---   },
--- }
-require("dap-python").setup "~/.virtualenvs/debugpy/bin/python"
+
+local function python_os()
+  if vim.loop.os_uname().sysname == "Linux" then
+    require("dap-python").setup "~/.virtualenvs/debugpy/bin/python"
+  end
+  if vim.loop.os_uname().sysname == "Windows" then
+    dap.configurations.python = {
+      {
+        type = "python",
+        request = "launch",
+        name = "launch file",
+        program = "${file}",
+      },
+    }
+
+    dap.adapters.python = {
+      type = "executable",
+      command = "python",
+      args = {
+        "-m",
+        "debugpy.adapter",
+      },
+    }
+  end
+end
+
+python_os()
