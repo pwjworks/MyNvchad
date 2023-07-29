@@ -112,6 +112,7 @@ local function python_os()
         request = "launch",
         name = "launch file",
         program = "${file}",
+        pythonPath = "python",
       },
     }
 
