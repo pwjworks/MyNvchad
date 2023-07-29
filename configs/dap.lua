@@ -105,7 +105,7 @@ local function python_os()
   if vim.loop.os_uname().sysname == "Linux" then
     require("dap-python").setup "~/.virtualenvs/debugpy/bin/python"
   end
-  if vim.loop.os_uname().sysname == "Windows" then
+  if vim.loop.os_uname().sysname == "Windows_NT" then
     dap.configurations.python = {
       {
         type = "python",
