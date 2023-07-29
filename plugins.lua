@@ -303,7 +303,6 @@ local plugins = {
   },
   {
     "Kohirus/cppassist.nvim",
-    event = "VeryLazy",
     config = function()
       require("cppassist").setup()
     end,

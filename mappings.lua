@@ -105,6 +105,7 @@ M.dap = {
     ["<leader>di"] = { "<cmd>:lua require'dap'.step_into()<CR>", "step_into" },
     ["<leader>du"] = { "<cmd>:lua require'dapui'.toggle()<CR>", "toggle ui" },
     ["<leader>dd"] = { "<Cmd>lua require'dapui'.eval()<CR>", "toggle value" },
+    ["<leader>dv"] = { "<Cmd>lua require'dap'.run_last()<CR>", "run last" },
   },
 }
 
